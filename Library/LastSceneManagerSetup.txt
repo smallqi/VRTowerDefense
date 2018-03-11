@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Demo/Demo1.unity
+- path: Assets/ZXQAssets/Scenes/scene0.unity
   isLoaded: 1
   isActive: 1
