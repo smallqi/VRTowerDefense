@@ -5,6 +5,7 @@
 		<kind>0</kind>
 		<info>远距离单体射击</info>
 		<hpAdd>0</hpAdd>
+		<homeHpAdd>0</homeHpAdd>
 		<attackAdd>10</attackAdd>
 		<attackRangeAdd>20</attackRangeAdd>
 		<attackSpeedAdd>10</attackSpeedAdd>
@@ -17,10 +18,11 @@
 		<kind>0</kind>
 		<info>中距离持续攻击</info>
 		<hpAdd>0</hpAdd>
+		<homeHpAdd>0</homeHpAdd>
 		<attackAdd>10</attackAdd>
 		<attackRangeAdd>10</attackRangeAdd>
 		<attackSpeedAdd>10</attackSpeedAdd>
-		<defenceAdd>20</defenceAdd>
+		<defenceAdd>10</defenceAdd>
 		<image>null</image>
 	</good>
 	<good>
@@ -29,6 +31,7 @@
 		<kind>0</kind>
 		<info>近距离爆发斩击</info>
 		<hpAdd>0</hpAdd>
+		<homeHpAdd>0</homeHpAdd>
 		<attackAdd>20</attackAdd>
 		<attackRangeAdd>1</attackRangeAdd>
 		<attackSpeedAdd>10</attackSpeedAdd>
@@ -41,6 +44,7 @@
 		<kind>1</kind>
 		<info>恢复英雄少许血量</info>
 		<hpAdd>10</hpAdd>
+		<homeHpAdd>0</homeHpAdd>
 		<attackAdd>0</attackAdd>
 		<attackRangeAdd>0</attackRangeAdd>
 		<attackSpeedAdd>0</attackSpeedAdd>
@@ -52,7 +56,8 @@
 		<name>水晶</name>
 		<kind>1</kind>
 		<info>恢复家园少许血量</info>
-		<hpAdd>10</hpAdd>
+		<hpAdd>0</hpAdd>
+		<homeHpAdd>10</homeHpAdd>
 		<attackAdd>0</attackAdd>
 		<attackRangeAdd>0</attackRangeAdd>
 		<attackSpeedAdd>0</attackSpeedAdd>

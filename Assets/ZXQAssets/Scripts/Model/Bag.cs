@@ -30,7 +30,7 @@ public class Bag{
 		get { return curDrugAccount; }
 	}
 	//药品数组
-	public List<Good> drugs;
+	public Dictionary<Good, int> drugs;
 
 	//默认构造函数
 	public Bag(int xmaxWeaponAccount = 3, int xmaxDrugAccount = 3) {
@@ -40,7 +40,7 @@ public class Bag{
 
 		maxDrugAccount = xmaxDrugAccount;
 		curDrugAccount = 0;
-		drugs = new List<Good> ();
+		drugs = new Dictionary<Good, int>();
 	}
 
 	///summry
@@ -48,48 +48,81 @@ public class Bag{
 	/// summry
 
 	//升级背包
-	public void UpdateBag() {
-		if (maxDrugAccount < 100)
+	public bool UpdateBag() {
+		if (maxDrugAccount < 100) {
 			maxDrugAccount++;
-		if (maxWeaponAccount < 100)
-			maxWeaponAccount++;
+			return true;
+		}
+		return false;
 	}
 	//增加物品
-	public void AddGood(Good good) {
+	public bool AddGood(Good good) {
 		switch(good.Kind) {
 		case 0:
 			if (curWeaponAccount < maxWeaponAccount) {
 				weapons.Add (good);
 				curWeaponAccount++;
+				return true;
 			}
 			break;
 		case 1:
 			if (curDrugAccount < maxDrugAccount) {
-				drugs.Add (good);
+				if (drugs.ContainsKey (good)) {
+					drugs [good]++;
+					return true;
+				} else {
+					drugs.Add (good, 1);
+					return true;
+				}
 				curDrugAccount++;
 			}
 			break;
 		default:
 			break;
 		}
+		return false;
 	}
-	//丢弃物品
-	public void RemoveGood(Good good) {
+	//是否包含某个物品
+	public bool ContainGood(Good good) {
 		switch(good.Kind) {
 		case 0:
-			if (weapons.Contains(good)) {
-				weapons.Remove (good);
-				curWeaponAccount--;
+			if (weapons.Contains (good)) {
+				return true;
 			}
 			break;
 		case 1:
-			if(drugs.Contains(good)) {
-				drugs.Remove (good);
-				curDrugAccount--;
+			if (drugs.ContainsKey (good) && drugs [good] > 0) {
+				return true;
 			}
 			break;
 		default:
 			break;
 		}
+		return false;
+	}
+
+	//丢弃物品
+	public bool RemoveGood(Good good) {
+		switch(good.Kind) {
+		case 0:
+			if (weapons.Contains(good)) {
+				weapons.Remove (good);
+				curWeaponAccount--;
+				return true;
+			}
+			break;
+		case 1:
+			if (drugs.ContainsKey (good)) {
+				drugs [good]--;
+				if (drugs [good] < 1) {
+					drugs.Remove (good);
+				}
+				return true;
+			}
+			break;
+		default:
+			break;
+		}
+		return false;
 	}	
 }

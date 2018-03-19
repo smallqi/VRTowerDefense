@@ -38,6 +38,11 @@ public class Good {
 	public int HpAdd {
 		get { return hpAdd; }
 	}
+	//家园血量加成
+	private int homeHpAdd;
+	public int HomeHpAdd {
+		get { return homeHpAdd; }
+	}
 	//攻击力加成
 	private int attackAdd;
 	public int AttackAdd {
@@ -61,23 +66,36 @@ public class Good {
 
 	//构造函数
 	public Good(int xid, string xname, int xkind, string xinfo, Image xphoto,
-		int xhpAdd, int xattackAdd, int xattackRangeAdd, 
+		int xhpAdd, int xhomeHpAdd, int xattackAdd, int xattackRangeAdd, 
 		int xattackSpeedAdd, int xdefenceAdd) {
 		id = xid;
 		name = xname;
 		kind = xkind;
 		info = xinfo;
 		hpAdd = xhpAdd;
+		homeHpAdd = xhomeHpAdd;
 		attackAdd = xattackAdd;
 		attackRangeAdd = xattackRangeAdd;
 		attackSpeedAdd = xattackSpeedAdd;
 		defenceAdd = xdefenceAdd;
 		photo = xphoto;
 	}
-
+	public Good() {
+		id = 0;
+		name = null;
+		kind = 0;
+		info = null;
+		hpAdd = 0;
+		homeHpAdd = 0;
+		attackAdd = 0;
+		attackRangeAdd = 0;
+		attackSpeedAdd = 0;
+		defenceAdd = 0;
+		photo = null;
+	}
 	//重写输出函数
 	public override string ToString ()
 	{
-		return string.Format ("[Good: id={0}, name={1}, kind={2}, info={3}, hpAdd={4}, attackAdd={5}, attackRangeAdd={6}, attackSpeedAdd={7}, defenceAdd={8}]", id, name, kind, info, hpAdd, attackAdd, attackRangeAdd, attackSpeedAdd, defenceAdd);
+		return string.Format ("[Good: id={0}, name={1}, kind={2}, info={3}, hpAdd={4}, homeHpAdd = {9}, attackAdd={5}, attackRangeAdd={6}, attackSpeedAdd={7}, defenceAdd={8}]", id, name, kind, info, hpAdd, attackAdd, attackRangeAdd, attackSpeedAdd, defenceAdd, homeHpAdd);
 	}
 }

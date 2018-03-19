@@ -23,23 +23,36 @@ public class Equipments{
 		weapons = new List<Good> ();
 	}
 	//装备武器
-	public void AddWeapon(Good weapon) {
+	public bool AddWeapon(Good weapon) {
 		if (curEquipmentAccount < maxEquipmentAccount) {
 			weapons.Add (weapon);
 			curEquipmentAccount++;
+			return true;
 		}
+		return false;
 	}
 	//卸下武器
-	public void RemoveWeapon(Good weapon) {
+	public bool RemoveWeapon(Good weapon) {
 		if(weapons.Contains(weapon)) {
 			weapons.Remove(weapon);
 			curEquipmentAccount--;
+			return true;
 		}
+		return false;
 	}
+	//卸下所有武器
+	public bool RemoveAllWeapon() {
+		weapons.Clear ();
+		curEquipmentAccount = 0;
+		return true;
+	}
+
 	//升级装备栏
-	public void UpdateEquipments(){
+	public bool UpdateEquipments(){
 		if (maxEquipmentAccount < 100) {
 			maxEquipmentAccount++;
+			return true;
 		}
+		return false;
 	}
 }

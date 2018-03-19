@@ -46,9 +46,7 @@ public class GvrReticlePointer : GvrBasePointer {
   /// Default value 32767 ensures gaze reticle is always rendered on top.
   [Range(-32767, 32767)]
   public int reticleSortingOrder = 32767;
-	//UI的控制器
-	[Tooltip("The object must has funtion 'HandleClickEvent' ")]
-	public GameObject uiController;
+
 	//是否正在处于点击之中
 	private bool isClicking = false;
 
@@ -153,9 +151,10 @@ public class GvrReticlePointer : GvrBasePointer {
 		if (!isClicking && ReticleInnerDiameter < CLICK_MIN_INNER_ANGLE ) {
 			MaterialComp.color = Color.red;
 			//Debug.Log ("article should be red.");
-			//如果可以在这里发送PointerClick事件，把选择需要时间的计算在这里完成而不需要在每个物体身上进行
+			//这里发送PointerClick事件，选择确认需要的时间计算在这里统一完成而不需要在每个物体身上进行
 			//物体只需要撰写监听函数就可以了
-			uiController.SendMessage("HandleClickEvent");
+			MessageCenter.PostMsg(MsgType.CLICK_EVENT);
+
 			isClicking = true;
 		}
 		//Debug.Log ("inner_diameter is " + inner_diameter);
@@ -167,10 +166,6 @@ public class GvrReticlePointer : GvrBasePointer {
     //当前内外光圈初始值
     ReticleInnerAngle = RETICLE_MIN_INNER_ANGLE;
     ReticleOuterAngle = RETICLE_MIN_OUTER_ANGLE;
-		//如果没有放置UIController则报错
-		if (uiController == null) {
-			Debug.LogError ("UIController is null!");
-		}
   }
 
   protected override void Start() {

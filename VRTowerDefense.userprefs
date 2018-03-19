@@ -1,0 +1,25 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ZXQAssets\Scripts\Model\Hero.cs">
+    <Files>
+      <File FileName="Assets\ZXQAssets\Scripts\UICtrl\RunUICtrl.cs" Line="25" Column="70" />
+      <File FileName="Assets\ZXQAssets\Scripts\UICtrl\AttributesUICtrl.cs" Line="17" Column="44" />
+      <File FileName="Assets\ZXQAssets\Scripts\SystemController.cs" Line="72" Column="3" />
+      <File FileName="Assets\ZXQAssets\Scripts\Data\DataManager.cs" Line="78" Column="4" />
+      <File FileName="Assets\ZXQAssets\Scripts\Model\Equipments.cs" Line="36" Column="26" />
+      <File FileName="Assets\ZXQAssets\Scripts\Model\Bag.cs" Line="93" Column="11" />
+      <File FileName="Assets\ZXQAssets\Scripts\Model\Good.cs" Line="1" Column="1" />
+      <File FileName="Assets\ZXQAssets\Scripts\Model\Hero.cs" Line="110" Column="18" />
+      <File FileName="Assets\ZXQAssets\Scripts\InputTest.cs" Line="6" Column="12" />
+      <File FileName="Assets\ZXQAssets\Scripts\InputManager.cs" Line="7" Column="39" />
+      <File FileName="Assets\GoogleVR\Scripts\Cardboard\GvrReticlePointer.cs" Line="156" Column="47" />
+      <File FileName="Assets\ZXQAssets\Scripts\MessageCenter.cs" Line="60" Column="50" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="D:\unity\Project\Graduation Design\VRTowerDefense\Assets\ZXQAssets\Scripts\UICtrl\RunUICtrl.cs" line="109" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

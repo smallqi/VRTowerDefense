@@ -49,6 +49,7 @@ public class DataManager{
 				<kind>0</kind>
 				<info>远距离单体射击</info>
 				<hpAdd>0</hpAdd>
+				<homeHpAdd>0</homeHpAdd>
 				<attackAdd>10</attackAdd>
 				<attackRangeAdd>20</attackRangeAdd>
 				<attackSpeedAdd>10</attackSpeedAdd>
@@ -62,13 +63,14 @@ public class DataManager{
 			int kind = int.Parse(node.SelectSingleNode("kind").InnerText);
 			string info = node.SelectSingleNode("info").InnerText;
 			int hpAdd = int.Parse (node.SelectSingleNode("hpAdd").InnerText);
+			int homeHpAdd = int.Parse (node.SelectSingleNode("homeHpAdd").InnerText);
 			int attackAdd = int.Parse (node.SelectSingleNode("attackAdd").InnerText);
 			int attackRangeAdd = int.Parse (node.SelectSingleNode("attackRangeAdd").InnerText);
 			int attackSpeedAdd = int.Parse (node.SelectSingleNode("attackSpeedAdd").InnerText);
 			int defenceAdd = int.Parse (node.SelectSingleNode("defenceAdd").InnerText);
 			string imageFileName = node.SelectSingleNode("image").InnerText;
 			//创建物品实体
-			Good good = new Good(id,name, kind, info, null, hpAdd, attackAdd, attackRangeAdd, attackSpeedAdd, defenceAdd);
+			Good good = new Good(id,name, kind, info, null, hpAdd, homeHpAdd, attackAdd, attackRangeAdd, attackSpeedAdd, defenceAdd);
 			Debug.Log (good.ToString ());
 			//加入表
 			if (good != null)
